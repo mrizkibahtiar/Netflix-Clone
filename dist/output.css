@@ -1696,10 +1696,6 @@ video {
     height: 100%;
   }
 
-  .lg\:min-h-full {
-    min-height: 100%;
-  }
-
   .lg\:w-16 {
     width: 4rem;
   }
