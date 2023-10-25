@@ -21,7 +21,7 @@ $(document).ready(function () {
         $(answer[i]).slideUp();
         $(question[i]).click(function() {
             $(answer[i]).slideToggle();
-            $(plus[i]).addClass('plus-active');
+            $(plus[i]).toggleClass('plus-active');
             // mengembalikan ke keadaan semula yang sudah di klik sebelumnya
             $(".answer").not(answer[i]).slideUp();
             $(".plus").not(plus[i]).removeClass('plus-active');
