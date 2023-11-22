@@ -115,13 +115,28 @@
             }
         }
 
+        function displayModalBox() {
+            // menampilkan modal
+            const modalBoxContainer = document.querySelector('#modal-box-container');
+            const modalBox = modalBoxContainer.querySelector('#modal-box');
+
+            modalBoxContainer.classList.remove('hidden');
+            modalBoxContainer.classList.add('flex');
+            modalBox.classList.add('animate-pop');
+
+            if (modalBoxContainer.classList.contains('flex')) {
+                const ok = document.querySelector('#ok');
+                ok.addEventListener('click', function () {
+                    location.href = 'index.html';
+                })
+            }
+        }
+
         function checkUserPass() {
             const userData = getDataUser();
             let isUserFound = false;
             for (let i = 0; i < userData.length; i++) {
-                if (email.value !== userData[i].email) {
-                    warning.classList.remove('hidden');
-                } else if (email.value === userData[i].email && password.value === userData[i].password) {
+                if (email.value === userData[i].email && password.value === userData[i].password) {
                     isUserFound = true;
                     break;
                 }
@@ -129,20 +144,9 @@
             if (isUserFound) {
                 if (!warning.classList.contains('hidden')) {
                     warning.classList.add('hidden');
-                    // menampilkan modal
-                    const modalBoxContainer = document.querySelector('#modal-box-container');
-                    const modalBox = modalBoxContainer.querySelector('#modal-box');
-
-                    modalBoxContainer.classList.remove('hidden');
-                    modalBoxContainer.classList.add('flex');
-                    modalBox.classList.add('animate-pop');
-
-                    if (modalBoxContainer.classList.contains('flex')) {
-                        const ok = document.querySelector('#ok');
-                        ok.addEventListener('click', function () {
-                            location.href = 'index.html';
-                        })
-                    }
+                    displayModalBox();
+                } else {
+                    displayModalBox();
                 }
             } else {
                 warning.classList.remove('hidden');
