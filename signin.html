@@ -31,6 +31,16 @@
                 </div>
             </div>
 
+            <div id="modal-box-container" class="fixed w-full h-full hidden justify-center items-center
+            ">
+                <div class="fixed w-fit h-fit bg-white text-center rounded-lg p-5" id="modal-box">
+                    <p>Congratulation!</p>
+                    <p>You have made it into Pilem</p>
+                    <button id="ok"
+                        class="bg-[#e50914] text-white font-semibold px-2 py-1 rounded-md mt-2 transition duration-300 hover:translate-y-1">OK</button>
+                </div>
+            </div>
+
             <!-- Form Start -->
             <form
                 class="w-full min-h-fit mb-48 md:mb-[400px] lg:mb-16 lg:bg-black lg:bg-opacity-70 lg:rounded-md lg:w-[500px] text-white  lg:px-10 lg:pt-20 lg:pb-48 mx-auto">
@@ -41,11 +51,13 @@
                 </div>
                 <div class="md:w-1/2 lg:w-full flex flex-col px-5 md:mx-auto">
                     <h1 class="mb-4 lg:mb-5 text-4xl font-semibold">Sign In</h1>
-                    <input type="text" name="text" placeholder="Email or phone number"
+                    <input id="email" type="text" name="text" placeholder="Email"
                         class="mb-4 h-14 px-5 rounded-md focus:outline-none focus:border-none bg-[#333333]">
                     <input type="password" name="password" id="password" placeholder="Password"
-                        class="h-14 px-5 rounded-md focus:outline-none bg-[#333333]">
-                    <button type="submit" class="mt-8 w-full h-12 bg-[#e50914] rounded-md font-semibold">Sign
+                        class="h-14 px-5 rounded-md focus:outline-none bg-[#333333]" autocomplete="username">
+                    <p id="warning" class="text-[#e50914] mt-2 font-semibold hidden">Wrong email or password!</p>
+                    <button id="submit" type="submit"
+                        class="mt-5 w-full h-12 bg-[#e50914] rounded-md font-semibold">Sign
                         In</button>
                     <div class="flex justify-between mt-2 text-gray-400">
                         <div>
@@ -88,7 +100,62 @@
         feather.replace()
     </script>
     <script src="dist/script/jquery.js"></script>
-    <script src="dist/script/login.js"></script>
+    <script>
+        const storageKey = 'EMAIL_PASS_USER';
+        const email = document.querySelector('#email');
+        const password = document.querySelector('#password');
+        const warning = document.querySelector('#warning');
+        const submit = document.querySelector('#submit');
+
+        function getDataUser() {
+            if (localStorage !== null) {
+                return JSON.parse(localStorage.getItem(storageKey));
+            } else {
+                return [];
+            }
+        }
+
+        function checkUserPass() {
+            const userData = getDataUser();
+            let isUserFound = false;
+            for (let i = 0; i < userData.length; i++) {
+                if (email.value !== userData[i].email) {
+                    warning.classList.remove('hidden');
+                } else if (email.value === userData[i].email && password.value === userData[i].password) {
+                    isUserFound = true;
+                    break;
+                }
+            }
+            if (isUserFound) {
+                if (!warning.classList.contains('hidden')) {
+                    warning.classList.add('hidden');
+                    // menampilkan modal
+                    const modalBoxContainer = document.querySelector('#modal-box-container');
+                    const modalBox = modalBoxContainer.querySelector('#modal-box');
+
+                    modalBoxContainer.classList.remove('hidden');
+                    modalBoxContainer.classList.add('flex');
+                    modalBox.classList.add('animate-pop');
+
+                    if (modalBoxContainer.classList.contains('flex')) {
+                        const ok = document.querySelector('#ok');
+                        ok.addEventListener('click', function () {
+                            location.href = 'index.html';
+                        })
+                    }
+                }
+            } else {
+                warning.classList.remove('hidden');
+            }
+        }
+
+
+        submit.addEventListener('click', function (e) {
+            e.preventDefault();
+            checkUserPass();
+        })
+
+    </script>
 </body>
 
 </html>

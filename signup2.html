@@ -16,7 +16,7 @@
         </div>
         <a href="signin.html" class="font-semibold hover:underline md:text-2xl">Sign In</a>
     </div>
-    <div class="h-[800px] md:h-screen flex flex-col justify-between">
+    <div class="h-[800px] md:min-h-screen flex flex-col justify-between">
         <div class="mt-10 px-7 flex justify-center">
             <div class="md:w-96">
                 <div class="mb-2">
@@ -30,10 +30,10 @@
                     <p class="text-xl">Just a few more steps and you're done! We hate paperwork, too.</p>
                 </div>
                 <div>
-                    <input type="email" name="email"
+                    <input id="email" type="email" name="email"
                         class="w-full h-fit p-3 rounded-md border-[0.1px] border-gray-400 mb-3"
                         placeholder="Add a email">
-                    <input type="password" name="password" placeholder="Add a password"
+                    <input id="password" type="password" name="password" placeholder="Add a password"
                         class="w-full h-fit p-3 rounded-md border-[0.1px] border-gray-400 mb-3">
                     <div class="flex items-start mb-2">
                         <input type="checkbox" name="checkbox" class="w-6 h-6 mt-1 mr-2">
@@ -41,10 +41,11 @@
                     </div>
                 </div>
                 <div>
-                    <a href="signup3.html">
+                    <a id="next">
                         <button type="submit"
                             class="w-full h-fit px-3 py-5 bg-[#e50914] hover:bg-[#f6121d] duration-200 rounded-lg text-white font-semibold text-xl">Next</button>
                     </a>
+                    <p class="text-center mt-2 hidden" id="warning">The password must be at least 8 characters long!</p>
                 </div>
             </div>
         </div>
@@ -72,6 +73,37 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+            const storageKey = 'EMAIL_USER';
+            const storageKeyNew = 'EMAIL_PASS_USER';
+            const email = document.querySelector("#email");
+            const storedEmails = JSON.parse(localStorage.getItem(storageKey));
+            email.value = storedEmails[storedEmails.length - 1];
+
+            // check password
+            const next = document.querySelector("#next");
+            const password = document.querySelector('#password');
+            const warning = document.querySelector("#warning");
+            next.addEventListener('click', function () {
+                if (password.value.length < 8) {
+                    warning.classList.remove('hidden');
+                } else if (password.value.length >= 8) {
+                    warning.classList.add('hidden');
+                    let userData = JSON.parse(localStorage.getItem(storageKeyNew)) || [];
+                    const newEmailPass = {
+                        email: email.value.trim(),
+                        password: password.value.trim()
+                    }
+                    userData.push(newEmailPass);
+                    localStorage.setItem(storageKeyNew, JSON.stringify(userData));
+
+                    window.location.href = "signup3.html";
+                }
+            })
+        });
+    </script>
 </body>
 
 </html>

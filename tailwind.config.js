@@ -3,17 +3,16 @@ module.exports = {
   content: ['./src/**/*/.{html, js}', 'index.html', './**/*.{html, js}'],
   theme: {
     extend: {
-      fontFamily : {
-        poppins : 'Poppins',
+      fontFamily: {
+        poppins: 'Poppins',
       },
-      animation : {
-        download : 'download 1100ms ease-in-out infinite'
+      animation: {
+        pop: 'pop 200ms ease-in-out'
       },
-      keyframes : {
-        download : {
-          '0%' : {transform : 'translateY(0px)'},
-          '50%' : {transform : 'translateY(3.5px)'},
-          '100%' : {transform : 'translateY(7px)'}
+      keyframes: {
+        pop: {
+          '0%': { transform: 'scale(0)' },
+          '100%': { transform: 'scale(1)' }
         }
       }
     },

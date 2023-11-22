@@ -16,7 +16,17 @@
         </div>
         <a href="signin.html" class="font-semibold md:text-2xl hover:underline">Sign In</a>
     </div>
-    <div class="h-[800px] md:h-screen flex flex-col justify-between">
+    <div class="h-[800px] md:min-h-screen flex flex-col justify-between">
+        <div id="modal-box-container" class="fixed w-full h-full hidden justify-center items-center
+            ">
+            <div class="fixed w-fit h-fit bg-white text-center rounded-lg p-5 shadow-2xl" id="modal-box">
+                <p>Congratulation!</p>
+                <p>You have made it into Pilem</p>
+                <button id="ok"
+                    class="bg-[#e50914] text-white font-semibold px-2 py-1 rounded-md mt-2 transition duration-300 hover:translate-y-1">OK</button>
+            </div>
+        </div>
+
         <div class="mt-12 px-7 w-full md:w-[450px] md:mx-auto">
             <div>
                 <div class="mb-2">
@@ -28,8 +38,7 @@
                 </div>
                 <div class="mb-4 text-lg">
                     <select id="paymentMethod" value="method"
-                        class="w-full h-fit p-2 border-[0.5px] border-gray-500 rounded-md">
-                        <option value="select">Select a wallet</option>
+                        class="w-full h-fit p-2 border-[0.5px] border-gray-500 rounded-md" required>
                         <option value="gopay">Gopay</option>
                         <option value="dana">DANA</option>
                         <option value="ovo">OVO</option>
@@ -39,25 +48,36 @@
                 <div>
                     <div class="w-full h-fit px-5 py-6 bg-gray-300 rounded-md flex items-center justify-between">
                         <div class="text-left text-xs">
-                            <p class="font-semibold">IDR186,000/month</p>
-                            <p class="text-gray-500">Premium</p>
+                            <p class="font-semibold"><span id="price">IDR186,000</span>/month</p>
+                            <p class="text-gray-500" id="bundle">Premium</p>
                         </div>
-                        <p class="text-[#0071eb] hover:underline hover:underline-offset-2 text-sm">Change</p>
+                        <a href="signup4.html"
+                            class="text-[#0071eb] hover:underline hover:underline-offset-2 text-sm">Change</a>
                     </div>
                     <div class="mt-5 text-xs">
                         <p>By checking the checkbox below, you agree to our Terms of Use, Privacy Statement, and that
                             you are over 18. Pilem will automatically continue your membership and charge the membership
-                            fee (currently IDR186,000/month) to your payment method until you cancel. You may cancel at
+                            fee (currently <span id="price">IDR186,000</span>/month) to your payment method until you
+                            cancel. You
+                            may cancel at
                             any time to avoid future charges.</p>
                     </div>
                     <div class="mt-4 flex items-center">
-                        <input type="checkbox" name="agreement" id="agreement" class="w-5 h-5">
+                        <input type="checkbox" name="agreement" id="agreement" class="w-5 h-5 accent-[#e50914]">
                         <span class="ml-2">I agree.</span>
                     </div>
+                    <div>
+                        <p class="hidden text-[#e50914]" id="warning">You must acknowledge that you have read and agree
+                            to the Terms of
+                            Use
+                            to
+                            continue.</p>
+                    </div>
                     <div class="mt-4">
-                        <a href="index.html">
+                        <a>
                             <button type="submit"
-                                class="w-full h-fit px-3 py-5 bg-[#e50914] hover:bg-[#f6121d] duration-200 rounded-lg text-white font-semibold text-xl">Start
+                                class="w-full h-fit px-3 py-5 bg-[#e50914] hover:bg-[#f6121d] duration-200 rounded-lg text-white font-semibold text-xl"
+                                id="submit">Start
                                 Membership</button>
                         </a>
                     </div>

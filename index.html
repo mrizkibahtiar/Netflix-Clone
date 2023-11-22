@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="font-poppins scroll overflow-y-auto">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,9 @@
     <link rel="stylesheet" href="dist/output.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
 
     <style>
@@ -18,35 +21,49 @@
     </style>
 
 </head>
+
 <body class="overflow-x-hidden">
     <!-- Section 1 Start -->
     <div class="bg-[url('img/bg-hero.jpg')] bg-cover bg-right-bottom bg-no-repeat h-[75%] min-w-full bg-image">
         <div class="backdrop-brightness-50 w-full h-full flex flex-col p-5">
             <div class="px-3 lg:px-14 py-5 h-20 flex justify-between items-center p-9">
                 <div>
-                    <span class="text-[#e50914] text-4xl lg:text-[53px] font-bold cursor-pointer"><a href="index.html">Pilem</a></span>
+                    <span class="text-[#e50914] text-4xl lg:text-[53px] font-bold cursor-pointer"><a
+                            href="index.html">Pilem</a></span>
                 </div>
                 <div class="flex relative">
                     <a href="#" class="p-2 w-auto rounded-md bg-white block" id="bahasa">
                         <img src="dist/img/globe.svg" alt="globe" class="w-6 inline-block">
                         <img src="dist/img/down-arrow.svg" alt="arrow down" class="w-3 inline-block">
                     </a>
-                    <button id="signIn" type="submit" class="bg-[#e50914] p-2 font-semibold rounded-lg text-white hover:bg-[#c11119] duration-300 text-sm ml-2">Sign In</button>
+                    <button id="signIn" type="submit"
+                        class="bg-[#e50914] p-2 font-semibold rounded-lg text-white hover:bg-[#c11119] duration-300 text-sm ml-2">Sign
+                        In</button>
                     <!-- pop up -->
-                    <div class="absolute rounded-md no-underline text-black bg-transparent z-[999] bg-white w-36 h-fit overflow-hidden top-12 hidden" id="optionBahasa">
-                        <a href="#" class="border-black border-b-[1px] text-center hover:bg-[#e50914] hover:text-white duration-300 block" id="bEng">English</a>
-                        <a href="#" class="text-center hover:bg-[#e50914] hover:text-white duration-300 block" id="bIna">Indonesia</a>
+                    <div class="absolute rounded-md no-underline text-black bg-transparent z-[999] bg-white w-36 h-fit overflow-hidden top-12 hidden"
+                        id="optionBahasa">
+                        <a href="#"
+                            class="border-black border-b-[1px] text-center hover:bg-[#e50914] hover:text-white duration-300 block"
+                            id="bEng">English</a>
+                        <a href="#" class="text-center hover:bg-[#e50914] hover:text-white duration-300 block"
+                            id="bIna">Indonesia</a>
                     </div>
                 </div>
             </div>
             <div class="flex items-center justify-center flex-col text-white text-center h-[450px]">
                 <h1 class="text-2xl font-bold mb-3 md:text-5xl">Unlimited Movies, TV Shows, and More</h1>
                 <p class="text-lg lg:text-xl mb-3">Watch anywhere. Cancel anytime.</p>
-                <p class="text-lg lg:text-xl">Ready to watch? Enter your email to  <br>create or restart your membership.</p>
+                <p class="text-lg lg:text-xl">Ready to watch? Enter your email to <br>create or restart your membership.
+                </p>
                 <div class="mt-5">
-                    <input type="email" name="email" id="email" placeholder="Email address" class="inline-block box-border py-3 px-4 w-80 lg:w-96 bg-[rgba(0,0,0,.7)] border-[2px] border-[#646464] rounded-md active:bg-transparent md:mr-1">
+                    <input type="email" name="email" id="email" placeholder="Email address"
+                        class="inline-block box-border py-3 px-4 w-80 lg:w-96 bg-[rgba(0,0,0,.7)] border-[2px] border-[#646464] rounded-md active:bg-transparent md:mr-1">
 
-                    <a href="signup.html" class="bg-[#e50914] py-3 text-center mt-3 rounded-lg text-white inline-block group hover:bg-[#c11119] duration-300 font-semibold text-lg w-44 h-auto">Get Started <img src="dist/img/chevron-right.svg" class="inline group-hover:translate-x-[5px] duration-300 w-[30px]" ></img></a>
+                    <a id="submit-email"
+                        class="bg-[#e50914] py-3 text-center mt-3 rounded-lg text-white inline-block group hover:bg-[#c11119] duration-300 font-semibold text-lg w-44 h-auto cursor-pointer">Get
+                        Started <img src="dist/img/chevron-right.svg"
+                            class="inline group-hover:translate-x-[5px] duration-300 w-[30px]"></img></a>
+                    <p class="mt-2 hidden" id="warning">Enter your email correctly!</p>
                 </div>
             </div>
         </div>
@@ -54,40 +71,45 @@
     <!-- Section 1 End -->
 
     <hr class="h-2 bg-[#232323] border-0">
-    
+
     <!-- Section 2 Start -->
-    <div class="min-w-full h-fit bg-black text-white box-border text-center lg:text-left flex flex-col lg:flex-row items-center justify-center py-14 md:py-28 px-2 lg:px-40">
-            <div class="pb-5">
-                <p class="font-bold text-3xl lg:text-5xl">Enjoy on your TV</p>
-                <p class="mt-3 lg:text-2xl">Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, <br class="md:hidden"> and more.</p>
-            </div>
-            <video muted autoplay loop="true" class="w-[500px] md:w-[800px] lg:w-[700px] lg:-mr-[200px]">
-                <source src="dist/video/tv.mp4" type="video/mp4">
-                Your Browser does not support the video tag
-            </video>
+    <div
+        class="min-w-full h-fit bg-black text-white box-border text-center lg:text-left flex flex-col lg:flex-row items-center justify-center py-14 md:py-28 px-2 lg:px-40">
+        <div class="pb-5">
+            <p class="font-bold text-3xl lg:text-5xl">Enjoy on your TV</p>
+            <p class="mt-3 lg:text-2xl">Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players,
+                <br class="md:hidden"> and more.
+            </p>
+        </div>
+        <img src="dist/img/tv.png" class="w-[500px] md:w-[800px] lg:w-[600px] lg:-mr-[190px]">
     </div>
     <!-- Section 2 End -->
 
     <hr class="h-2 bg-[#232323] border-0">
 
     <!-- Section 3 Start -->
-    <section class="min-w-full h-fit bg-black text-white py-14 md:py-28 text-center lg:text-left flex flex-col lg:flex-row-reverse lg:px-20 items-center justify-center">
+    <section
+        class="min-w-full h-fit bg-black text-white py-14 md:py-28 text-center lg:text-left flex flex-col lg:flex-row-reverse lg:px-20 items-center justify-center">
         <div class="mb-20 lg:ml-24">
             <p class="font-bold text-3xl lg:text-5xl">Download your shows <br class="md:hidden"> to watch offline</p>
-            <p class="mt-3 lg:text-2xl">Save your favorites easily and always <br class="md:hidden"> have<br class="invisible lg:visible"> something to watch.</p>
+            <p class="mt-3 lg:text-2xl">Save your favorites easily and always <br class="md:hidden"> have<br
+                    class="invisible lg:visible"> something to watch.</p>
         </div>
         <div class="mt-4 mx-auto lg:ml-16">
             <div class="mx-auto w-40 md:w-72 lg:w-64">
                 <img src="dist/img/12PRO.png" alt="handphone">
             </div>
-            <div class="border-2 border-[#646464] w-[300px] md:w-[420px] lg:w-[350px] h-fit box-border bg-black rounded-xl mx-auto flex justify-between items-center px-2 md:px-4 py-3 mt-[-20px] relative z-10">
-                <img src="dist/img/GOTG3.jpeg" alt="Poster Guardian Of The Galaxy Vol.3" class="w-[50px] border border-[#646464] rounded-lg">
+            <div
+                class="border-2 border-[#646464] w-[300px] md:w-[420px] lg:w-[350px] h-fit box-border bg-black rounded-xl mx-auto flex justify-between items-center px-2 md:px-4 py-3 mt-[-20px] relative z-10">
+                <img src="dist/img/GOTG3.jpeg" alt="Poster Guardian Of The Galaxy Vol.3"
+                    class="w-[50px] border border-[#646464] rounded-lg">
                 <div class="my-auto text-center">
                     <p class="font-bold">Guardian Of The<br> Galaxy Vol.3</p>
                     <p class="text-[#0069d9]">Downloading...</p>
                 </div>
                 <div class="overflow-hidden">
-                    <img src="dist/img/arrow-down.png" alt=download" class="mt-5 animate-bounce w-10 md:w-11 text-white">
+                    <img src="dist/img/arrow-down.png" alt=download"
+                        class="mt-5 animate-bounce w-10 md:w-11 text-white">
                     <span class="-translate-y-4 lg:translate-x-2 rounded-md w-7 h-1 inline-block bg-white"></span>
                 </div>
             </div>
@@ -96,21 +118,26 @@
     <!-- Section 3 End -->
 
     <hr class="h-2 bg-[#232323] border-0">
-    
+
     <!-- Section 4 start -->
-    <section class="min-w-full h-[75%] bg-black text-white py-14 md:py-28 box-border text-center flex flex-col lg:flex-row items-center lg:text-left justify-center">
+    <section
+        class="min-w-full h-[75%] bg-black text-white py-14 md:py-28 box-border text-center flex flex-col lg:flex-row items-center lg:text-left justify-center">
         <div class="mb-14 relative lg:mr-36">
             <p class="font-bold text-3xl lg:text-5xl">Watch everywhere</p>
-            <p class="mt-3 lg:text-xl">Stream unlimited movies and TV shows <br class="md:hidden"> on<br class="invisible lg:visible"> your phone, tablet, laptop, and TV.</p>
+            <p class="mt-3 lg:text-xl">Stream unlimited movies and TV shows <br class="md:hidden"> on<br
+                    class="invisible lg:visible"> your phone, tablet, laptop, and TV.</p>
         </div>
         <div class="relative lg:mr-16">
             <img src="dist/img/monitor.svg" alt="Television" class="w-64 md:w-96 lg:w-72 mx-auto">
-            <video muted autoplay loop="true" class="w-[230px] md:w-[330px] lg:w-[250px] absolute top-[13.9px] md:top-[21px] lg:top-[17px] left-[15px] md:left-[27px] lg:left-[18px] rounded-md">
+            <video muted autoplay loop="true"
+                class="w-[230px] md:w-[330px] lg:w-[250px] absolute top-[13.9px] md:top-[21px] lg:top-[17px] left-[15px] md:left-[27px] lg:left-[18px] rounded-md">
                 <source src="dist/video/trailerGOTG3.mp4" type="video/mp4">
                 Your Browser does not support the video tag
             </video>
-            <img src="dist/img/potah.jpg" alt="Harry Potter" class="absolute w-14 md:w-24 lg:w-16 bottom-1 -left-8 md:-left-10">
-            <img src="dist/img/jeksen.png" alt="Percy Jackson" class="absolute w-44 md:w-64 lg:w-44 -right-20 top-12 md:-right-28">
+            <img src="dist/img/potah.jpg" alt="Harry Potter"
+                class="absolute w-14 md:w-24 lg:w-16 bottom-1 -left-8 md:-left-10">
+            <img src="dist/img/jeksen.png" alt="Percy Jackson"
+                class="absolute w-36 md:w-64 lg:w-44 -right-14 top-12 md:-right-28">
         </div>
     </section>
     <!-- Section 4 End -->
@@ -118,12 +145,14 @@
     <hr class="h-2 bg-[#232323] border-0">
 
     <!-- Section 5 Start -->
-    <section class="min-w-full h-auto bg-black text-white py-14 md:py-28 lg:px-24 lg:py-36 box-border text-center lg:text-left lg:flex lg:flex-row-reverse">
+    <section
+        class="min-w-full h-auto bg-black text-white py-14 md:py-28 lg:px-24 lg:py-36 box-border text-center lg:text-left lg:flex lg:flex-row-reverse lg:items-center">
         <div class="mb-20 lg:ml-14">
             <p class="font-bold text-3xl lg:text-5xl">Create Profiles for Kids</p>
-            <p class="mt-3 lg:text-xl">Send kids on adventures with their favorite characters in a space made just for them—<br class="md:hidden">free with<br class="invisible md:visible"> your membership.</p>
+            <p class="mt-3 lg:text-xl">Send kids on adventures with their favorite characters in a space made just for
+                them—<br class="md:hidden">free with<br class="hidden md:block"> your membership.</p>
         </div>
-        <img src="dist/img/children.svg" alt="Children" class="w-64 md:w-[450px] lg:w-96 lg:ml-16 mx-auto">
+        <img src="dist/img/family.svg" alt="Family" class="w-48 md:w-[450px] lg:w-80 lg:ml-16 mx-auto">
     </section>
     <!-- Section 5 End -->
 
@@ -136,67 +165,89 @@
         </div>
         <div class="flex items-center justify-evenly flex-col px-7 lg:px-32 lg:text-xl">
             <div class="question mb-3 w-full cursor-pointer">
-                <div class="py-5 px-6 bg-[#2d2d2d] box-border h-16 flex justify-between hover:bg-[#414141] duration-300">
+                <div
+                    class="py-5 px-6 bg-[#2d2d2d] box-border h-16 flex justify-between hover:bg-[#414141] duration-300">
                     <p class="inline-block">What is Pilem?</p>
                     <i data-feather="plus" class="plus inline-block duration-300"></i>
                 </div>
                 <div class="answer mt-[1px] py-5 px-6 bg-[#2d2d2d] box-border h-fit text-left">
-                    <p>Pilem is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.</p>
+                    <p>Pilem is a streaming service that offers a wide variety of award-winning TV shows, movies, anime,
+                        documentaries, and more on thousands of internet-connected devices.</p>
                     <br>
-                    <p>You can watch as much as you want, whenever you want without a single commercial – all for one low monthly price. There's always something new to discover and new TV shows and movies are added every week!</p>
+                    <p>You can watch as much as you want, whenever you want without a single commercial – all for one
+                        low monthly price. There's always something new to discover and new TV shows and movies are
+                        added every week!</p>
                 </div>
             </div>
 
             <div class="question mb-3 w-full cursor-pointer">
-                <div class="py-5 px-6 bg-[#2d2d2d] box-border h-16 flex justify-between hover:bg-[#414141] duration-300">
+                <div
+                    class="py-5 px-6 bg-[#2d2d2d] box-border h-16 flex justify-between hover:bg-[#414141] duration-300">
                     <p class="inline-block">How much does Pilem cost?</p>
                     <i data-feather="plus" class="plus inline-block duration-300"></i>
                 </div>
                 <div class="answer mt-[1px] py-5 px-6 bg-[#2d2d2d] box-border h-fit text-left">
-                    <p>Watch Pilem on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from IDR54,000 to IDR186,000 a month. No extra costs, no contracts.</p>
+                    <p>Watch Pilem on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed
+                        monthly fee. Plans range from IDR54,000 to IDR186,000 a month. No extra costs, no contracts.</p>
                 </div>
             </div>
-            
+
             <div class="question mb-3 w-full cursor-pointer">
-                <div class="py-5 px-6 bg-[#2d2d2d] box-border h-16 flex justify-between hover:bg-[#414141] duration-300">
+                <div
+                    class="py-5 px-6 bg-[#2d2d2d] box-border h-16 flex justify-between hover:bg-[#414141] duration-300">
                     <p class="inline-block">Where can i watch</p>
                     <i data-feather="plus" class="plus inline-block duration-300"></i>
                 </div>
                 <div class="answer mt-[1px] py-5 px-6 bg-[#2d2d2d] box-border h-fit text-left">
-                    <p>Watch anywhere, anytime. Sign in with your Pilem account to watch instantly on the web at Pilem.com from your personal computer or on any internet-connected device that offers the Pilem app, including smart TVs, smartphones, tablets, streaming media players and game consoles.</p>
+                    <p>Watch anywhere, anytime. Sign in with your Pilem account to watch instantly on the web at
+                        Pilem.com from your personal computer or on any internet-connected device that offers the Pilem
+                        app, including smart TVs, smartphones, tablets, streaming media players and game consoles.</p>
                     <br>
-                    <p>You can also download your favorite shows with the iOS, Android, or Windows 10 app. Use downloads to watch while you're on the go and without an internet connection. Take Pilem with you anywhere.</p>
+                    <p>You can also download your favorite shows with the iOS, Android, or Windows 10 app. Use downloads
+                        to watch while you're on the go and without an internet connection. Take Pilem with you
+                        anywhere.</p>
                 </div>
             </div>
 
             <div class="question mb-3 w-full cursor-pointer">
-                <div class="py-5 px-6 bg-[#2d2d2d] box-border h-16 flex justify-between hover:bg-[#414141] duration-300">
+                <div
+                    class="py-5 px-6 bg-[#2d2d2d] box-border h-16 flex justify-between hover:bg-[#414141] duration-300">
                     <p class="inline-block">WHat can I watch on Pilem</p>
                     <i data-feather="plus" class="plus inline-block duration-300"></i>
                 </div>
                 <div class="answer mt-[1px] py-5 px-6 bg-[#2d2d2d] box-border h-fit text-left">
-                    <p>Pilem has an extensive library of feature films, documentaries, TV shows, anime, award-winning Pilem originals, and more. Watch as much as you want, anytime you want.</p>
+                    <p>Pilem has an extensive library of feature films, documentaries, TV shows, anime, award-winning
+                        Pilem originals, and more. Watch as much as you want, anytime you want.</p>
                 </div>
             </div>
 
             <div class="question mb-3 w-full cursor-pointer">
-                <div class="py-5 px-6 bg-[#2d2d2d] box-border h-16 flex justify-between hover:bg-[#414141] duration-300">
+                <div
+                    class="py-5 px-6 bg-[#2d2d2d] box-border h-16 flex justify-between hover:bg-[#414141] duration-300">
                     <p class="inline-block">Is Pilem good for kids?</p>
                     <i data-feather="plus" class="plus inline-block duration-300"></i>
                 </div>
                 <div class="answer mt-[1px] py-5 px-6 bg-[#2d2d2d] box-border h-fit text-left">
-                    <p>The Pilem Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and movies in their own space.</p>
+                    <p>The Pilem Kids experience is included in your membership to give parents control while kids enjoy
+                        family-friendly TV shows and movies in their own space.</p>
                     <br>
-                    <p>Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch and block specific titles you don’t want kids to see.</p>
+                    <p>Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating
+                        of content kids can watch and block specific titles you don’t want kids to see.</p>
                 </div>
             </div>
         </div>
 
         <div class="mx-auto w-fit mt-10">
-            <p class="text-base mb-4">Ready to watch? Enter your email to<br class="md:hidden"> create or restart your membership</p>
+            <p class="text-base mb-4">Ready to watch? Enter your email to<br class="md:hidden"> create or restart your
+                membership</p>
             <div>
-                <input type="email" name="email" id="email" placeholder="Email address" class="box-border py-3 px-4 w-80 md:inline-block md:mr-2 bg-transparent border-[2px] border-[#646464] block rounded-md">
-                <a href="signup.html" class="bg-[#e50914] py-3 text-center mt-3 rounded-lg text-white inline-block group hover:bg-[#c11119] duration-300 font-semibold text-lg w-44 h-auto">Get Started <img src="dist/img/chevron-right.svg" class="inline group-hover:translate-x-[5px] duration-300 w-[30px]" ></img></a>
+                <input type="email" name="email" id="email" placeholder="Email address"
+                    class="box-border py-3 px-4 w-80 md:inline-block md:mr-2 bg-transparent border-[2px] border-[#646464] block rounded-md">
+                <a id="submit-email"
+                    class="bg-[#e50914] py-3 text-center mt-3 rounded-lg text-white inline-block group hover:bg-[#c11119] duration-300 font-semibold text-lg w-44 h-auto cursor-pointer">Get
+                    Started <img src="dist/img/chevron-right.svg"
+                        class="inline group-hover:translate-x-[5px] duration-300 w-[30px]"></img></a>
+                <p class="mt-2 hidden" id="warning">Enter your email correctly!</p>
             </div>
         </div>
     </section>
@@ -226,5 +277,65 @@
     </script>
     <script src="dist/script/jquery.js"></script>
     <script src="dist/script/script.js"></script>
+    <script>
+        // Email get Started
+        const storageKey = 'EMAIL_USER';
+        const email = document.querySelectorAll('#email');
+        const submitEmail = document.querySelectorAll('#submit-email');
+        const warning = document.querySelectorAll('#warning');
+        submitEmail.forEach(function (submit, index) {
+            submit.addEventListener('click', function () {
+                const enteredEmail = email[index].value.trim();
+                if (enteredEmail.includes("@")) {
+                    if (!warning[index].classList.contains("hidden")) {
+                        warning[index].classList.add("hidden");
+                    }
+                    if (typeof Storage !== "undefined") {
+                        // mendapatkan array dari session storage
+                        let storedEmails = JSON.parse(localStorage.getItem(storageKey)) || [];
+
+                        let storedEmailPasswords = JSON.parse(localStorage.getItem("EMAIL_PASS_USER")) || [];
+
+                        let emailAlreadyExist = false;
+
+                        for (let i = 0; i < storedEmailPasswords.length; i++) {
+                            if (enteredEmail === storedEmailPasswords[i].email) {
+                                emailAlreadyExist = true;
+                                break
+                            }
+                        }
+
+
+
+                        if (!emailAlreadyExist) {
+
+                            // memasukkan email baru ke stored email
+                            storedEmails.push(enteredEmail);
+
+                            // menyimpan array kembali ke session storage
+                            localStorage.setItem(storageKey, JSON.stringify(storedEmails));
+
+                            // memindahkan ke halaman berikutnya
+                            window.location.href = "signup.html";
+                        } else {
+                            for (let i = 0; i < storedEmails.length; i++) {
+                                console.log(storedEmails[i]);
+                                if (enteredEmail === storedEmails[i]) {
+                                    storedEmails.splice(i, 1);
+                                }
+                                localStorage.setItem(storageKey, JSON.stringify(storedEmails));
+                            }
+
+                            window.location.href = "signup3.html";
+                        }
+                    }
+                } else {
+                    warning[index].classList.remove('hidden');
+                }
+            })
+        });
+
+    </script>
 </body>
+
 </html>
