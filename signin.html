@@ -109,7 +109,7 @@
 
         function getDataUser() {
             if (localStorage !== null) {
-                return JSON.parse(localStorage.getItem(storageKey));
+                return JSON.parse(localStorage.getItem(storageKey)) || [];
             } else {
                 return [];
             }
@@ -138,6 +138,9 @@
             for (let i = 0; i < userData.length; i++) {
                 if (email.value === userData[i].email && password.value === userData[i].password) {
                     isUserFound = true;
+                    break;
+                } else if (userData == []) {
+                    isUserFound = false;
                     break;
                 }
             }
