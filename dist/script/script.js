@@ -30,7 +30,7 @@ $(document).ready(function () {
 
     // next to login page
     function nextToSignIn() {
-        location.href = "../../signin.html";
+        location.href = "signin.html";
     }
     $('#signIn').click(function () {
         nextToSignIn();
